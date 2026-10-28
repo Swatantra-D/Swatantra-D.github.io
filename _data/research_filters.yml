@@ -1,0 +1,6 @@
+# Filter buttons on /research/. `slug` must match the `filters:` values in _portfolio files.
+- { slug: all, label: "All" }
+- { slug: neuroimaging, label: "Neuroimaging" }
+- { slug: deep-learning, label: "Deep Learning" }
+- { slug: sleep-memory, label: "Sleep & Memory" }
+- { slug: computational-neuroscience, label: "Computational Neuroscience" }

@@ -1,0 +1,25 @@
+# Jekyll build output and caches
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
+# Bundler / Ruby
+/vendor/
+.bundle/
+
+# Private originals: full-resolution photos (with EXIF/GPS), the unredacted CV.
+# Only the processed, metadata-free copies in assets/ are published.
+originals/
+photos-raw/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

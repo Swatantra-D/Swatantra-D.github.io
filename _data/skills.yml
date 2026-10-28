@@ -1,0 +1,42 @@
+# Skills on /cv-skills/, grouped as in the CV.
+- group: "Neuroscience"
+  icon: brain
+  items:
+    - "fMRI data analysis"
+    - "fMRI preprocessing"
+    - "Local field potential (LFP) analysis"
+    - "EEG data analysis"
+    - "EEG data collection (OpenBCI)"
+    - "Basic single-neuron modelling"
+    - "Spiking neural networks"
+    - "EEG/EOG/EMG collection with Arduino"
+- group: "Machine Learning"
+  icon: network
+  items:
+    - "Artificial neural networks"
+    - "Convolutional neural networks"
+    - "Deep learning"
+    - "Segmentation"
+    - "Random forests"
+    - "K-means clustering"
+    - "Classification"
+    - "Regression"
+- group: "Programming Languages"
+  icon: code
+  items: ["Python", "MATLAB", "R", "Julia", "C++"]
+- group: "Software & Toolboxes"
+  icon: toolbox
+  items: ["Nilearn", "NiPy", "CONN", "SPM", "fMRIPrep", "OpenViBE", "Linux", "Slurm workload manager", "VS Code"]
+- group: "Wet Lab"
+  icon: flask
+  items:
+    - "PCR"
+    - "Restriction endonuclease assay"
+    - "Transformation"
+    - "Agarose gel electrophoresis"
+    - "SDS-PAGE"
+    - "Genomic and plasmid DNA isolation and analysis"
+    - "Antibiotic susceptibility testing"
+    - "Cell viability assay"
+    - "Cell counting assays"
+    - "Cell culturing techniques"

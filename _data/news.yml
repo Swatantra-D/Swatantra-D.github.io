@@ -1,0 +1,14 @@
+# News strip on the home page. Newest first; the first four are shown.
+# `text` accepts Markdown. `link` is optional.
+- date: "Jul 2026"
+  text: "Started as a **Senior Project Associate** in the Cognitive Brain Dynamics Lab (IIT Jodhpur & NBRC), studying network dynamics across healthy ageing, MCI and Alzheimer's disease."
+  link: /research/network-dynamics-ageing/
+- date: "Jul 2026"
+  text: "Completed my **MS by Research** in Artificial Intelligence and Data Science at IIT Jodhpur, with a thesis on age-associated slowing of brain-state transitions."
+  link: /research/brain-state-transitions/
+- date: "2026"
+  text: "Poster at **ACCS12, BraiNDy 2026**: “Age-associated slowing down of speed of transitions during naturalistic movie watching”."
+  link: /publications-talks/
+- date: "2026"
+  text: "Invited lecture on **Memory and Learning** for the International Youth Neuroscience Association's summer programme, and a seat on the BraiNDy 2026 Scientific Committee."
+  link: /teaching-mentoring/

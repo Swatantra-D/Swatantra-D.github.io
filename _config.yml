@@ -1,0 +1,122 @@
+# Site configuration for https://swatantra-d.github.io
+#
+# Built on the academicpages content model (MIT licence, see LICENSE) with a
+# custom visual layer. Compatible with GitHub Pages' built-in Jekyll build:
+# only plugins on the GitHub Pages allow-list are used.
+#
+# After changing this file, restart `bundle exec jekyll serve`.
+
+# ── Basic site settings ───────────────────────────────────────────────────────
+locale                   : "en-GB"
+title                    : "Swatantra Dhara"
+title_separator          : "·"
+name                     : &name "Swatantra Dhara"
+description              : "Swatantra Dhara studies how large-scale brain dynamics change with age, using fMRI, computational modelling and machine learning. Senior Project Associate, Cognitive Brain Dynamics Lab, IIT Jodhpur & NBRC."
+tagline                  : "Computational neuroscience · fMRI · brain dynamics & ageing"
+url                      : "https://swatantra-d.github.io"
+baseurl                  : ""
+repository               : "Swatantra-D/Swatantra-D.github.io"
+theme                    : null   # no gem theme: all layouts and styles live in this repo
+
+# Default social preview (Open Graph / Twitter) image, relative to the site root.
+og_image                 : "/assets/img/og-cover.jpg"
+
+# ── Author profile (from the CV) ──────────────────────────────────────────────
+author:
+  name             : *name
+  avatar           : "/assets/img/profile-400.webp"
+  avatar_large     : "/assets/img/profile-800.webp"
+  pronouns         :
+  role             : "Senior Project Associate"
+  bio              : "Computational neuroscience, fMRI and brain dynamics across the lifespan."
+  employer         : "Cognitive Brain Dynamics Lab, IIT Jodhpur & National Brain Research Center"
+  department       : "Center for Brain Science and Applications, School of Artificial Intelligence and Data Science"
+  location         : "Jodhpur, India"
+  # PLACEHOLDER: replace with a permanent public e-mail address.
+  email            : "YOUR_EMAIL_HERE"
+  github           : "Swatantra-D"
+  linkedin         : "swatantra-dhara"
+  googlescholar    : # URL, if you create a profile
+  orcid            : # URL, if you have one
+
+# Contact form: create a form at https://formspree.io and paste its ID here
+# (the part after /f/ in the form endpoint).
+formspree_id             : "YOUR_FORM_ID"
+
+# Publication categories, in display order (used by the Publications & Talks page).
+publication_category:
+  papers:
+    title: "Peer-reviewed papers"
+  posters:
+    title: "Conference posters"
+  theses:
+    title: "Theses"
+
+# ── Reading files ─────────────────────────────────────────────────────────────
+include:
+  - _pages
+exclude:
+  - .bundle
+  - .jekyll-cache
+  - .sass-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - node_modules
+  - originals
+  - photos-raw
+  - scripts
+  - vendor
+keep_files:
+  - .git
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# ── Conversion ────────────────────────────────────────────────────────────────
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: "<!--more-->"
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: 2..3
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge
+
+# ── Collections (academicpages content model) ─────────────────────────────────
+# Add an entry by writing a Markdown file in the matching folder.
+collections:
+  portfolio:          # research projects, shown on /research/
+    output: true
+    permalink: /research/:path/
+  publications:       # papers, posters and theses, shown on /publications-talks/
+    output: false
+  talks:              # talks and invited lectures, shown on /publications-talks/
+    output: false
+  teaching:           # teaching roles and workshops, shown on /teaching-mentoring/
+    output: false
+
+defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: page }
+  - scope: { path: "", type: posts }
+    values: { layout: post, draft_badge: false }
+  - scope: { path: "", type: portfolio }
+    values: { layout: project }
+
+# ── Outputting ────────────────────────────────────────────────────────────────
+permalink: /blog/:year/:month/:title/
+timezone: Asia/Kolkata
+future: false
+
+# ── Plugins (all on the GitHub Pages allow-list) ──────────────────────────────
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml

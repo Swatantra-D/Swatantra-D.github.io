@@ -1,0 +1,82 @@
+# Collapsible CV sections on /cv-skills/ (all from the CV).
+education:
+  - degree: "MS by Research in Artificial Intelligence and Data Science"
+    institution: "Center for Brain Science and Applications, School of AI and Data Science, Indian Institute of Technology Jodhpur"
+    dates: "Jan 2024 – Jul 2026"
+    notes:
+      - "CGPA 7.95 / 10"
+      - "Thesis: “Characterizing Age-Associated Slowing Down of Speed of Transitions in Brain States”"
+  - degree: "MSc in Medical Biotechnology and Bioinformatics"
+    institution: "Center for Health Science and Technology, JIS Institute of Advanced Studies & Research, JIS University, Kolkata"
+    dates: "Aug 2021 – Jul 2023"
+    notes:
+      - "CGPA 9.18 / 10, ranked 1st"
+      - "JIS Merit Scholarship; JIS Best Student Award"
+  - degree: "BSc (Hons) Biotechnology"
+    institution: "Shoolini University, Solan"
+    dates: "Aug 2018 – Jul 2021"
+    notes:
+      - "CGPA 8.2 / 10"
+  - degree: "High School Diploma, Sciences (Maths, Biology, Chemistry, Physics)"
+    institution: "Howrah Vivekananda Institution, West Bengal Council of Higher Secondary Education"
+    dates: "2018"
+    notes:
+      - "Score 75%"
+
+awards:
+  - title: "Rank 1st, MSc Medical Biotechnology and Bioinformatics"
+    detail: "JIS University"
+  - title: "JIS Best Student Award"
+    detail: "JIS University"
+  - title: "JIS Merit Scholarship"
+    detail: "JIS University"
+
+exams:
+  - title: "GATE Biotechnology 2022"
+    detail: "All India Rank 486 (top 3%)"
+  - title: "IIT-JAM Biotechnology 2021"
+    detail: "All India Rank 540 (top 7%)"
+  - title: "TIFR-JGEEBILS 2021"
+    detail: "Qualified"
+
+schools:
+  - title: "Computational Approaches to Memory and Plasticity (CAMP) Workshop 2023"
+    detail: "IISER Pune, supported by the Simons Foundation · 16 days"
+  - title: "IEEE UpSkill EnMed 2022"
+    detail: "IIT Kharagpur · 2 days"
+  - title: "Neuromatch Academy: Computational Neuroscience 2021"
+    detail: "30 days · project: “Predicting image identities from neural activities”"
+  - title: "Neuromatch Academy: Deep Learning 2021"
+    detail: "21 days · project: “Predicting visual fMRI responses to videos with a neuro-inspired network”"
+  - title: "8th Baltic-Nordic Summer School on Neuroscience and Neuroinformatics 2021"
+    detail: "HBP & EBRAINS · 5 days"
+  - title: "INCF Training Weeks 2021"
+    detail: "INCF · 5 days"
+  - title: "International Conference on Data Science in Biology 2020"
+    detail: "IIT Jodhpur · 5 days"
+
+moocs:
+  - title: "Python Basics for Data Science"
+    detail: "IBM, edX"
+  - title: "Statistics and R"
+    detail: "HarvardX, edX"
+  - title: "Probability and Statistics: To p or not to p?"
+    detail: "University of London, Coursera"
+  - title: "Writing in the Sciences"
+    detail: "Stanford University, Coursera"
+  - title: "Principles of Biochemistry"
+    detail: "HarvardX, edX"
+  - title: "Molecular Biology – Part 2: Transcription and Transposition"
+    detail: "MITx, edX"
+  - title: "Epigenetics Control of Gene Expression"
+    detail: "University of Melbourne, Coursera"
+  - title: "Introduction to Genomic Technologies"
+    detail: "Johns Hopkins University, Coursera"
+  - title: "Fundamentals of Immunology: Innate Immunity and B-Cell Function"
+    detail: "Rice University, Coursera"
+
+languages:
+  - { name: "Bengali", level: "Native" }
+  - { name: "English", level: "Fluent" }
+  - { name: "Hindi", level: "Fluent" }
+  - { name: "German", level: "Basics" }

@@ -1,0 +1,20 @@
+# Header navigation, in display order. Each `url` must match a page permalink.
+main:
+  - title: "Home"
+    url: /
+  - title: "Research"
+    url: /research/
+  - title: "Blog"
+    url: /blog/
+  - title: "Publications & Talks"
+    url: /publications-talks/
+  - title: "Teaching & Mentoring"
+    url: /teaching-mentoring/
+  - title: "Experience & Service"
+    url: /experience-service/
+  - title: "Photography"
+    url: /photography/
+  - title: "CV & Skills"
+    url: /cv-skills/
+  - title: "Contact"
+    url: /contact/

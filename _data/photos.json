@@ -1,0 +1,48 @@
+[
+  {
+    "filename": "neurotech-session.jpg",
+    "title": "Wiring up",
+    "category": "Neurotech",
+    "caption": "Building a biosignal set-up on the floor: an Arduino board, electrode leads and a sticker-covered laptop. Add the event name and date.",
+    "caption_is_draft": true,
+    "alt": "Three people sit cross-legged on bright orange mats around an Arduino board, coloured electrode wires and a sticker-covered laptop; one opens a packet of electrodes while the others look on. More people and a whiteboard are in the background.",
+    "edit": {
+      "crop": [
+        0,
+        0,
+        1,
+        0.915
+      ]
+    },
+    "web": "/assets/photos/web/neurotech-session.webp",
+    "thumb": "/assets/photos/thumb/neurotech-session.webp",
+    "width": 1600,
+    "height": 1098,
+    "thumb_width": 600,
+    "thumb_height": 412
+  },
+  {
+    "filename": "pen-sketch.jpg",
+    "title": "Out for a walk",
+    "category": "Sketchbook",
+    "caption": "Pen on paper: a spiky-haired figure taking a small dog for a walk.",
+    "caption_is_draft": true,
+    "alt": "Black ink sketch on white paper of a cartoon figure with spiky hair, a square face and a faint smile, holding a leash attached to a small dog with pointed ears and a long tail.",
+    "edit": {
+      "rotate": 90,
+      "crop": [
+        0.17,
+        0.22,
+        0.858,
+        0.86
+      ],
+      "autocontrast": 1
+    },
+    "web": "/assets/photos/web/pen-sketch.webp",
+    "thumb": "/assets/photos/thumb/pen-sketch.webp",
+    "width": 1290,
+    "height": 1600,
+    "thumb_width": 484,
+    "thumb_height": 600
+  }
+]

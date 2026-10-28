@@ -1,0 +1,10 @@
+# Count-up facts on the home page (all from the CV).
+- value: 5
+  label: "research labs, in India and the Netherlands"
+- value: 4
+  label: "invited lectures for the International Youth Neuroscience Association"
+- value: 55
+  suffix: "+"
+  label: "participants across two BCI hackathons I organised"
+- value: 3
+  label: "courses supported as a teaching assistant"

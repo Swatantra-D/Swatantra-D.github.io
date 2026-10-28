@@ -1,0 +1,150 @@
+# Interactive timeline on /experience-service/. Newest first.
+# kind: research | leadership | service
+# `period` is shown as written; leave it empty when the CV gives no dates.
+- kind: research
+  title: "Senior Project Associate"
+  org: "Cognitive Brain Dynamics Lab, IIT Jodhpur & National Brain Research Center"
+  period: "Jul 2026 – Nov 2026"
+  current: true
+  summary: "Spatio-temporal characterisation of network dynamics across healthy ageing and disease."
+  details:
+    - "Project: “Spatio-temporal characterization of network dynamics across healthy ageing and diseases”."
+    - "Data preprocessing and statistical analysis."
+    - "Relating functional dynamics and structural network parameters to healthy ageing across tasks and clinical conditions (MCI, Alzheimer's)."
+    - "Writing manuscripts."
+    - "Supervisor: Dr. Dipanjan Roy."
+  links:
+    - { label: "Lab website", url: "https://dipanjanr.com/" }
+
+- kind: service
+  title: "Member, Scientific Committee"
+  org: "BraiNDy 2026"
+  period: "2026"
+  summary: "Scientific committee for the BraiNDy 2026 meeting."
+  details:
+    - "Member of the BraiNDy 2026 Scientific Committee."
+  links:
+    - { label: "BraiNDy 2026 team", url: "https://braindymeeting.github.io/v2026/team/" }
+
+- kind: research
+  title: "Master's Student Researcher (JRF equivalent)"
+  org: "Cognitive Brain Dynamics Lab, IIT Jodhpur & National Brain Research Center"
+  period: "Jan 2024 – Jun 2026"
+  summary: "MS thesis: characterising the age-associated slowing of transitions between brain states."
+  details:
+    - "Thesis: “Characterizing Age-Associated Slowing Down of Speed of Transitions in Brain States”."
+    - "Time-series extraction, preprocessing and denoising of fMRI data."
+    - "Fitting and interpreting statistical models of fMRI time series to understand functional network reconfiguration during movie watching, rest and a sensorimotor task."
+    - "Supervisor: Dr. Dipanjan Roy."
+
+- kind: leadership
+  title: "Founder and Head"
+  org: "IITJ CBSA NeuroTech Society"
+  period: "During MS, IIT Jodhpur"
+  summary: "Started IIT Jodhpur's neurotechnology club and ran two BCI hackathons."
+  details:
+    - "Started a club on neurotechnology at IIT Jodhpur."
+    - "Organised and led two editions of the SAIDE CBSA NeuroTech BCI hackathon, for over 20 and 35 participants."
+    - "Planned and ran the weekly activities."
+  links:
+    - { label: "NeuroTech Society", url: "https://sites.google.com/iitj.ac.in/neurotechsociety/home" }
+
+- kind: service
+  title: "Member, Student Wellbeing Committee"
+  org: "IIT Jodhpur"
+  period: "During MS, IIT Jodhpur"
+  summary: "Student Wellbeing Committee member."
+  details:
+    - "Member of the Student Wellbeing Committee at IIT Jodhpur."
+
+- kind: research
+  title: "Master's thesis student"
+  org: "Medical Image Processing and Theranostics Laboratory, IIT Kharagpur"
+  period: "Jan 2023 – Jun 2023"
+  summary: "Deep learning on optical coherence tomography scans of cutaneous wound healing."
+  details:
+    - "Thesis: “Deep Learning Applications on Cutaneous Wound Healing From Optical Coherence Tomography Scans of Small Animals”."
+    - "Fitted autoencoders and convolutional neural networks on image data and interpreted the results statistically."
+    - "Manual segmentation of images."
+    - "Supervisor: Dr. Subhamoy Mandal."
+  links:
+    - { label: "Lab website", url: "https://mitlabiitkgp.in/team/" }
+
+- kind: research
+  title: "Master's minor project"
+  org: "Kausik Basak's Lab, JIS Institute of Advanced Studies & Research, Kolkata"
+  period: "Mar 2022 – Jun 2022"
+  summary: "Enzyme class prediction from peptide statistics with neural networks and random forests."
+  details:
+    - "Project: “Enzyme Class prediction from peptide statistics data with Artificial Neural Networks”."
+    - "Used artificial neural networks and random forests to classify enzymes from their chemical features."
+    - "Wrote scripts to automate the EMBOSS-Pepstats data-collection pipeline."
+    - "Supervisor: Dr. Kausik Basak."
+
+- kind: research
+  title: "Neuroinformatics intern"
+  org: "Genzel Lab, Donders Institute for Brain, Cognition and Behaviour, Radboud University, Nijmegen"
+  period: "Nov 2021 – Jun 2022"
+  summary: "Sharp-wave ripples and non-REM sleep in a study of cannabidiol, anaesthesia and memory."
+  details:
+    - "Project: “Analyzing the effect of cannabidiol and anesthesia on sleep and memory formation”."
+    - "Wrote MATLAB scripts for the automatic assessment and analysis of sharp-wave ripples (SWR) and non-REM sleep."
+    - "Fine-tuned the existing SWR detection scripts."
+    - "Supervisor: Lisa K. A. Genzel."
+  links:
+    - { label: "Lab website", url: "https://www.genzellab.com/" }
+
+- kind: leadership
+  title: "Founding and Head member"
+  org: "CHeST Student Club, JIS Institute of Advanced Studies & Research"
+  period: "During MSc, JIS University"
+  summary: "Co-founded the student club and ran a workshop, “Bioinformatics: what and why?”."
+  details:
+    - "Founding and head member of the CHeST Student Club."
+    - "Successfully conducted a workshop on “Bioinformatics what and why?”."
+
+- kind: service
+  title: "Volunteer"
+  org: "Neuromatch Academy and Neuromatch Conferences"
+  period: ""
+  summary: "Feedback analysis, Discord issues mediation, social events, outreach and conference planning."
+  details:
+    - "Academy feedback analysis."
+    - "Academy issues mediator on Discord."
+    - "Social events handling and outreach."
+    - "Conference planning and outreach."
+
+- kind: leadership
+  title: "Associate Chief Technology Officer"
+  org: "Project Encephalon"
+  period: ""
+  summary: "Associate CTO."
+  details:
+    - "Associate Chief Technology Officer, Project Encephalon."
+
+- kind: research
+  title: "Bachelor's thesis student"
+  org: "Yeast Biology Laboratory, Shoolini University"
+  period: "Dec 2020 – Apr 2021"
+  summary: "Telomeres and ageing: yeast telomere structure and regulation."
+  details:
+    - "Thesis: “Telomeres and Ageing”, on the structure of yeast telomeres, telomere regulation and the link between telomeres and ageing."
+    - "Learned and applied basic cell and molecular biology techniques on yeast and E. coli."
+    - "Supervisor: Prof. Anuradha Sourirajan."
+
+- kind: leadership
+  title: "Chief Technology Officer"
+  org: "Project Envision, Shoolini University"
+  period: "During BSc, Shoolini University"
+  summary: "CTO of Project Envision."
+  details:
+    - "Chief Technology Officer, Project Envision."
+
+- kind: service
+  title: "School clubs and campaigns"
+  org: "Howrah Vivekananda Institution"
+  period: "School, until 2018"
+  summary: "Sahitya Sabha, Eco Club, Child Cabinet; Vice President of the Save Earth Campaign."
+  details:
+    - "Member of the Sahitya Sabha, Eco Club and Child Cabinet."
+    - "Vice President, Save Earth Campaign."

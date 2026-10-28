@@ -1,0 +1,32 @@
+# Short timeline on the home page. Newest first. kind: education | experience
+- kind: experience
+  dates: "Jul 2026 – Nov 2026"
+  current: true
+  title: "Senior Project Associate"
+  org: "Cognitive Brain Dynamics Lab, IIT Jodhpur & NBRC"
+  highlight: "Network dynamics across healthy ageing, MCI and Alzheimer's disease."
+- kind: education
+  dates: "Jan 2024 – Jul 2026"
+  title: "MS by Research, Artificial Intelligence & Data Science"
+  org: "Indian Institute of Technology Jodhpur"
+  highlight: "Thesis on the age-associated slowing of transitions between brain states."
+- kind: experience
+  dates: "Jan 2023 – Jun 2023"
+  title: "Master's thesis student"
+  org: "Medical Image Processing and Theranostics Lab, IIT Kharagpur"
+  highlight: "Deep learning on OCT scans of healing wounds; IEEE EMBC 2023 paper."
+- kind: experience
+  dates: "Nov 2021 – Jun 2022"
+  title: "Neuroinformatics intern"
+  org: "Genzel Lab, Donders Institute, Radboud University"
+  highlight: "MATLAB tools for sharp-wave-ripple and non-REM sleep analysis."
+- kind: education
+  dates: "Aug 2021 – Jul 2023"
+  title: "MSc, Medical Biotechnology & Bioinformatics"
+  org: "JIS University, Kolkata"
+  highlight: "Ranked 1st; JIS Best Student Award and Merit Scholarship."
+- kind: education
+  dates: "Aug 2018 – Jul 2021"
+  title: "BSc (Hons), Biotechnology"
+  org: "Shoolini University, Solan"
+  highlight: "Bachelor's thesis on telomeres and ageing in yeast."
