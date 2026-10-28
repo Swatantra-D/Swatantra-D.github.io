@@ -1,0 +1,68 @@
+---
+title: Contact
+permalink: /contact/
+eyebrow: "09 · Contact"
+lede: "For research collaborations, questions about my work, teaching or the NeuroTech Society, write to me here or find me on LinkedIn and GitHub."
+description: "Contact Swatantra Dhara: e-mail, LinkedIn, GitHub and a contact form."
+---
+{%- assign email = site.author.email -%}
+<section class="section">
+  <div class="container contact-grid">
+    <ul class="contact-list" data-stagger>
+      <li>
+        {%- if email == "YOUR_EMAIL_HERE" or email == "" %}
+        <div class="contact-item card">
+          <span class="explore-icon">{% include icon.html name="mail" %}</span>
+          <span><span class="lbl">Email</span><span class="val"><span class="placeholder-mark">YOUR_EMAIL_HERE</span></span></span>
+        </div>
+        {%- else %}
+        <a class="contact-item card tilt glow" href="mailto:{{ email }}">
+          <span class="explore-icon">{% include icon.html name="mail" %}</span>
+          <span><span class="lbl">Email</span><span class="val">{{ email }}</span></span>
+        </a>
+        {%- endif %}
+      </li>
+      <li>
+        <a class="contact-item card tilt glow" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" rel="me noopener">
+          <span class="explore-icon">{% include icon.html name="linkedin" %}</span>
+          <span><span class="lbl">LinkedIn</span><span class="val">in/{{ site.author.linkedin }}</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-item card tilt glow" href="https://github.com/{{ site.author.github }}" rel="me noopener">
+          <span class="explore-icon">{% include icon.html name="github" %}</span>
+          <span><span class="lbl">GitHub</span><span class="val">{{ site.author.github }}</span></span>
+        </a>
+      </li>
+      <li>
+        <div class="contact-item card">
+          <span class="explore-icon">{% include icon.html name="pin" %}</span>
+          <span><span class="lbl">Based at</span><span class="val">Cognitive Brain Dynamics Lab, IIT Jodhpur</span></span>
+        </div>
+      </li>
+    </ul>
+
+    <form class="contact-form card" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST" data-contact-form data-reveal>
+      <h2>Send a message</h2>
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input class="input" id="cf-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input class="input" id="cf-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="cf-message">Message</label>
+        <textarea class="textarea" id="cf-message" name="message" required></textarea>
+      </div>
+      <div class="hp-field" aria-hidden="true">
+        <label for="cf-gotcha">Leave this field empty</label>
+        <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="_subject" value="Message from swatantra-d.github.io">
+      <button class="btn btn-primary btn-magnetic" type="submit">Send message {% include icon.html name="arrow-right" %}</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

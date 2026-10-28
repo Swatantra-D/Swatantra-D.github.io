@@ -1,0 +1,131 @@
+---
+layout: home
+title: Home
+permalink: /
+description: "Swatantra Dhara studies how large-scale brain dynamics change with age, using fMRI, computational modelling and machine learning. Senior Project Associate, Cognitive Brain Dynamics Lab, IIT Jodhpur & NBRC."
+hero_eyebrow: "Senior Project Associate · IIT Jodhpur & NBRC"
+# Rotating identity line under the name (keep each phrase short).
+identity:
+  - "computational neuroscientist"
+  - "fMRI · brain dynamics & ageing"
+  - "deep learning for biomedical images"
+  - "neurotech community builder"
+interests:
+  - "Brain-state dynamics"
+  - "Healthy ageing"
+  - "Naturalistic fMRI"
+  - "Network neuroscience"
+  - "MCI & Alzheimer's disease"
+  - "Sleep & memory"
+  - "Deep learning for medical imaging"
+  - "Brain–computer interfaces"
+  - "Computational neuroscience"
+explore:
+  - { title: "Research", url: "/research/", icon: "research", text: "Projects from brain-state transitions to OCT segmentation, with schematics." }
+  - { title: "Blog", url: "/blog/", icon: "pen", text: "Explainers and practical notes on brain dynamics and fMRI methods." }
+  - { title: "Publications", url: "/publications-talks/", icon: "book", text: "Papers, posters, theses and invited lectures." }
+  - { title: "Photography", url: "/photography/", icon: "camera", text: "A small, growing collection of photographs and sketches." }
+  - { title: "CV & Skills", url: "/cv-skills/", icon: "file", text: "The full CV, plus skills across neuroimaging, ML and the wet lab." }
+---
+<section class="section news" aria-labelledby="news-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Latest</p>
+      <h2 id="news-title">News</h2>
+    </div>
+    <ul class="news-strip" data-stagger>
+      {%- for item in site.data.news limit: 4 %}
+      {%- assign text_html = item.text | markdownify | remove: "<p>" | remove: "</p>" | strip %}
+      <li class="news-item">
+        <article class="news-card card tilt glow">
+          <span class="news-date">{{ item.date }}</span>
+          <p class="news-text">{{ text_html }}</p>
+          {%- if item.link %}
+          <a class="news-more stretched" href="{{ item.link | relative_url }}">Read more<span class="sr-only">: {{ text_html | strip_html | truncatewords: 8 }}</span>{% include icon.html name="arrow-right" %}</a>
+          {%- endif %}
+        </article>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="about-title">
+  <div class="container about-grid">
+    <div class="about-aside" data-reveal>
+      <p class="eyebrow">About</p>
+      <h2 id="about-title">From the bench to brain dynamics</h2>
+      <h3>Research interests</h3>
+      <ul class="chip-list">
+        {%- for i in page.interests %}
+        <li class="chip chip--brand">{{ i }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="about-body" data-reveal>
+      <p>I came to brain science the long way round. I started in biotechnology, with a BSc (Hons) at Shoolini University and a bachelor's thesis on telomeres and ageing in yeast, then moved into medical biotechnology and bioinformatics for my MSc at JIS University, Kolkata, where I graduated first in my class. Projects in deep learning and neuroinformatics kept pulling me towards computation and the brain, and in 2024 I joined the Center for Brain Science and Applications at IIT Jodhpur for an MS by Research in Artificial Intelligence and Data Science, which I completed in 2026.</p>
+      <p>Today I am a Senior Project Associate in Dr. Dipanjan Roy's Cognitive Brain Dynamics Lab (IIT Jodhpur and the National Brain Research Center), studying how large-scale brain dynamics change as we age. My MS thesis characterised an age-associated slowing in how fast the brain transitions between states, using fMRI recorded during movie watching, rest and a sensorimotor task. I now relate functional dynamics and network structure to healthy ageing and to clinical conditions such as mild cognitive impairment and Alzheimer's disease. Next, I am looking for <mark class="placeholder-mark">[PLACEHOLDER: the kind of position you want next, e.g. PhD positions]</mark> where I can keep combining computational modelling and neuroimaging to understand how brain dynamics change across the lifespan.</p>
+      <p>My training spans three quite different benches. In the wet lab I have worked with PCR, gel electrophoresis, SDS-PAGE and cell culture. In deep learning, I fitted autoencoders and CNNs to segment skin layers in optical coherence tomography scans of healing wounds at IIT Kharagpur, work related to an IEEE EMBC 2023 paper, and trained neural networks and random forests to predict enzyme classes from peptide statistics. In neuroscience, I wrote MATLAB tools for sharp-wave-ripple and non-REM sleep analysis at the Donders Institute, and I now work on fMRI preprocessing, denoising and time-series modelling, with side quests into EEG with OpenBCI and Arduino-based biosignal recording.</p>
+      <p>Outside the lab, I founded IIT Jodhpur's NeuroTech Society and ran two editions of its BCI hackathon, and I teach whenever I can, including as an invited lecturer for the International Youth Neuroscience Association. Away from screens you will find me cycling, running or playing badminton, on the harmonica or the keyboard, gardening, cooking, reading, taking photographs, and generally trying to find patterns in the universe.</p>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="facts" data-stagger aria-label="A few numbers">
+      {%- for f in site.data.facts %}
+      <li>
+        <span class="fact-value" data-count="{{ f.value }}" data-suffix="{{ f.suffix }}" aria-hidden="true">{{ f.value }}{{ f.suffix }}</span>
+        <span class="sr-only">{{ f.value }}{{ f.suffix }}</span>
+        <span class="fact-label">{{ f.label }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="path-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Path so far</p>
+      <h2 id="path-title">Timeline</h2>
+      <p>Education and research positions, newest first. The full story, including service and leadership roles, is on the <a href="{{ '/experience-service/' | relative_url }}">Experience &amp; Service</a> page.</p>
+    </div>
+    <ol class="timeline" data-timeline>
+      {%- for t in site.data.timeline %}
+      <li class="tl-item tl-item--{{ t.kind }}" data-reveal>
+        <span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-card card">
+          <p class="tl-meta">
+            <span class="badge tl-tag">{{ t.kind | capitalize }}</span>
+            <span class="tl-dates">{{ t.dates }}</span>
+            {%- if t.current %}<span class="now-pill">Current</span>{% endif %}
+          </p>
+          <h3 class="tl-title">{{ t.title }}</h3>
+          <p class="tl-org">{{ t.org }}</p>
+          <p class="tl-highlight">{{ t.highlight }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="explore-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Explore</p>
+      <h2 id="explore-title">Find your way around</h2>
+    </div>
+    <ul class="explore-grid plain-list" data-stagger>
+      {%- for e in page.explore %}
+      <li>
+        <a class="explore-card card tilt glow" href="{{ e.url | relative_url }}">
+          <span class="explore-icon">{% include icon.html name=e.icon %}</span>
+          <h3>{{ e.title }}</h3>
+          <p>{{ e.text }}</p>
+          <span class="arrow" aria-hidden="true">{% include icon.html name="arrow-right" %}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

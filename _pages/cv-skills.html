@@ -1,0 +1,102 @@
+---
+title: "CV & Skills"
+permalink: /cv-skills/
+eyebrow: "08 · CV & Skills"
+lede: "The full CV to read or download, my skills across neuroscience, machine learning, programming and the wet lab, and the details behind them."
+description: "CV and skills of Swatantra Dhara: fMRI analysis and preprocessing, deep learning, Python, MATLAB, Nilearn, fMRIPrep, SPM, CONN, and wet-lab techniques."
+---
+{%- assign cv = site.data.cv -%}
+{%- assign pdf = "/assets/Swatantra_Dhara_CV.pdf" | relative_url -%}
+<section class="section" id="cv" aria-labelledby="cv-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Curriculum vitae</p>
+      <h2 id="cv-title">CV</h2>
+    </div>
+    <div class="cv-layout">
+      <div class="cv-viewer card">
+        <object data="{{ pdf }}#view=FitH" type="application/pdf" aria-label="CV of Swatantra Dhara (PDF)">
+          <div class="cv-fallback">
+            <p>Your browser can't show the PDF here, but you can open or download it.</p>
+            <a class="btn btn-primary" href="{{ pdf }}" download>{% include icon.html name="download" %}Download CV (PDF)</a>
+          </div>
+        </object>
+      </div>
+      <div class="cv-side card">
+        <h3 class="cv-side-title">Take it with you</h3>
+        <p>Three pages, last updated October 2026.</p>
+        <a class="btn btn-primary btn-magnetic" href="{{ pdf }}" download="Swatantra_Dhara_CV.pdf">{% include icon.html name="download" %}Download PDF</a>
+        <a class="btn btn-ghost" href="{{ pdf }}" target="_blank" rel="noopener">Open in a new tab {% include icon.html name="external" %}</a>
+        <p class="small">This web copy leaves out personal contact details; use the <a href="{{ '/contact/' | relative_url }}">contact page</a> to get in touch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Toolkit</p>
+      <h2 id="skills-title">Skills</h2>
+    </div>
+    <ul class="skills-grid" data-stagger>
+      {%- for g in site.data.skills %}
+      <li class="skill-card card tilt glow">
+        <header>
+          <span class="explore-icon">{% include icon.html name=g.icon %}</span>
+          <h3>{{ g.group }}</h3>
+        </header>
+        <ul class="chip-list">
+          {%- for s in g.items %}
+          <li class="chip">{{ s }}</li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="muted" style="margin-top:1.25rem" data-reveal>
+      Languages:
+      {%- for l in cv.languages %} {{ l.name }} ({{ l.level | downcase }}){% unless forloop.last %},{% endunless %}{% endfor %}.
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="details-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">In detail</p>
+      <h2 id="details-title">Education, awards and training</h2>
+    </div>
+    <div class="narrow" data-reveal>
+      <details class="cv-details" open>
+        <summary>Education <span class="count">{{ cv.education.size }}</span>{% include icon.html name="chevron-down" %}</summary>
+        <div class="details-body">
+          <ul class="def-list">
+            {%- for e in cv.education %}
+            <li>
+              <span class="t">{{ e.degree }}</span><span class="d">{{ e.dates }}</span>
+              <span class="d" style="grid-column:1/-1">{{ e.institution }}</span>
+              <ul class="notes">{% for n in e.notes %}<li>{{ n }}</li>{% endfor %}</ul>
+            </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </details>
+      {%- assign sections = "awards:Awards & honours,exams:National exams,schools:Summer schools & workshops,moocs:Online courses (MOOCs)" | split: "," %}
+      {%- for s in sections %}
+      {%- assign kv = s | split: ":" %}
+      {%- assign rows = cv[kv[0]] %}
+      <details class="cv-details">
+        <summary>{{ kv[1] | escape }} <span class="count">{{ rows.size }}</span>{% include icon.html name="chevron-down" %}</summary>
+        <div class="details-body">
+          <ul class="def-list">
+            {%- for r in rows %}
+            <li><span class="t">{{ r.title }}</span><span class="d">{{ r.detail }}</span></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

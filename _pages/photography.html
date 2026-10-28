@@ -1,0 +1,64 @@
+---
+title: Photography
+permalink: /photography/
+eyebrow: "07 · Photography"
+lede: "Away from the scanner: photographs and the occasional sketch."
+description: "Photography by Swatantra Dhara."
+---
+{%- comment -%}
+  The gallery is built from _data/photos.json, which scripts/process_photos.py
+  writes. To add photos: drop originals into photos-raw/, run the script, edit
+  the new entries' title/category/caption/alt in _data/photos.json, commit.
+{%- endcomment -%}
+{%- assign photos = site.data.photos -%}
+{%- assign cats = photos | map: "category" | uniq -%}
+<section class="section">
+  <div class="container">
+    <div class="gallery-intro">
+      <div class="prose" data-reveal>
+        <p>Photography sits on my list of things to do away from the screen, alongside cycling, gardening and music. In a way it is a quieter version of my day job: looking for patterns, whether they are in a brain network or in the world around me.</p>
+        <p class="muted small">Tap or click a photo to open it full screen; use the arrow keys or swipe to move between photos.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter photos by category" data-filter-group="gallery" style="margin:0">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All <span class="count">{{ photos.size }}</span></button>
+        {%- for c in cats %}
+        <button class="filter-btn" type="button" data-filter="{{ c | slugify }}" aria-pressed="false">{{ c }} <span class="count">{{ photos | where: "category", c | size }}</span></button>
+        {%- endfor %}
+      </div>
+    </div>
+    <p class="sr-only" role="status" aria-live="polite" data-filter-status="gallery"></p>
+
+    <ul class="gallery" data-gallery data-filter-items="gallery">
+      {%- for p in photos %}
+      <li class="gallery-item" data-tags="{{ p.category | slugify }}" data-ar="{{ p.thumb_width | times: 1.0 | divided_by: p.thumb_height }}" style="--ar: {{ p.thumb_width }} / {{ p.thumb_height }}">
+        <a class="gallery-link" href="{{ p.web | relative_url }}"
+           data-w="{{ p.width }}" data-h="{{ p.height }}"
+           data-title="{{ p.title | escape }}" data-caption="{{ p.caption | escape }}"
+           data-alt="{{ p.alt | escape }}" data-draft="{{ p.caption_is_draft }}">
+          <img src="{{ p.thumb | relative_url }}" width="{{ p.thumb_width }}" height="{{ p.thumb_height }}" alt="{{ p.alt | escape }}" loading="lazy" decoding="async">
+          <span class="gallery-cap" aria-hidden="true"><span class="gallery-title">{{ p.title }}</span><span class="gallery-cat">{{ p.category }}</span></span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <div class="lb-stage">
+    <div class="lb-top">
+      <span class="lb-counter" aria-live="polite"></span>
+      <button class="icon-btn" type="button" data-lb-close aria-label="Close photo viewer">{% include icon.html name="close" %}</button>
+    </div>
+    <div class="lb-figure">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="1" height="1">
+    </div>
+    <div class="lb-caption">
+      <span class="ttl"></span>
+      <span class="cap"></span>
+      <span class="draft" hidden>Draft caption</span>
+    </div>
+    <button class="icon-btn lb-prev" type="button" aria-label="Previous photo">{% include icon.html name="chevron-left" %}</button>
+    <button class="icon-btn lb-next" type="button" aria-label="Next photo">{% include icon.html name="chevron-right" %}</button>
+  </div>
+</dialog>

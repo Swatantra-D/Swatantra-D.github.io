@@ -1,0 +1,63 @@
+---
+title: "Experience & Service"
+permalink: /experience-service/
+eyebrow: "06 · Experience & Service"
+lede: "Research positions, leadership and service, newest first. Filter by type, and open any entry for the details."
+description: "Research experience, leadership and service of Swatantra Dhara: IIT Jodhpur & NBRC, IIT Kharagpur, Donders Institute, NeuroTech Society founder, BraiNDy 2026 Scientific Committee, Neuromatch volunteer."
+---
+{%- assign xp = site.data.experience -%}
+<section class="section">
+  <div class="container">
+    <div class="filters" role="group" aria-label="Filter by type" data-filter-group="xp">
+      {%- assign kinds = "all:All,research:Research,leadership:Leadership,service:Service & community" | split: "," %}
+      {%- for k in kinds %}
+        {%- assign kv = k | split: ":" %}
+        {%- if kv[0] == "all" %}{% assign n = xp.size %}{% else %}{% assign n = xp | where: "kind", kv[0] | size %}{% endif %}
+      <button class="filter-btn" type="button" data-filter="{{ kv[0] }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ kv[1] | escape }} <span class="count">{{ n }}</span></button>
+      {%- endfor %}
+    </div>
+    <p class="xp-legend" aria-hidden="true">
+      <span><i style="background:var(--brand-2)"></i>Research</span>
+      <span><i style="background:var(--accent)"></i>Leadership</span>
+      <span><i style="border:2px solid var(--ink-3)"></i>Service &amp; community</span>
+    </p>
+    <p class="sr-only" role="status" aria-live="polite" data-filter-status="xp"></p>
+
+    <ol class="timeline xp-timeline" data-timeline data-filter-items="xp">
+      {%- for item in xp %}
+      <li class="tl-item xp-item xp-item--{{ item.kind }}" data-tags="{{ item.kind }}" data-reveal>
+        <span class="tl-node" aria-hidden="true"></span>
+        <div class="xp-card card">
+          <p class="xp-meta">
+            <span class="badge">{{ item.kind | capitalize }}</span>
+            {%- if item.period and item.period != "" %}<span class="period">{{ item.period }}</span>{% endif %}
+            {%- if item.current %}<span class="now-pill">Current</span>{% endif %}
+          </p>
+          <h2 class="xp-title">{{ item.title }}</h2>
+          <p class="xp-org">{{ item.org }}</p>
+          <p class="xp-summary">{{ item.summary }}</p>
+          <button class="xp-toggle" type="button" aria-expanded="false" aria-controls="xp-{{ forloop.index }}">
+            <span class="lbl">Details</span>{% include icon.html name="chevron-down" %}
+          </button>
+          <div class="xp-details" id="xp-{{ forloop.index }}">
+            <div>
+              <ul>
+                {%- for d in item.details %}
+                <li>{{ d }}</li>
+                {%- endfor %}
+              </ul>
+              {%- if item.links %}
+              <div class="link-row">
+                {%- for l in item.links %}
+                <a class="btn btn-sm btn-ghost" href="{{ l.url }}" rel="noopener">{{ l.label }} {% include icon.html name="external" %}</a>
+                {%- endfor %}
+              </div>
+              {%- endif %}
+            </div>
+          </div>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

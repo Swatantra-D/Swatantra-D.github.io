@@ -1,0 +1,64 @@
+---
+title: Research
+permalink: /research/
+eyebrow: "02 · Research"
+lede: "How brain dynamics change with age, and the deep-learning, sleep and neuroinformatics projects that led here. Pick a card for the question, a plain-language summary, methods and my role."
+description: "Research projects by Swatantra Dhara: brain-state transitions and ageing, network dynamics in MCI and Alzheimer's disease, OCT skin-layer segmentation, sharp-wave ripples, enzyme classification and Neuromatch projects."
+---
+{%- assign projects = site.portfolio | sort: "order" -%}
+<section class="section">
+  <div class="container">
+    <div class="filters" role="group" aria-label="Filter projects by area" data-filter-group="research">
+      {%- for f in site.data.research_filters %}
+        {%- if f.slug == "all" -%}
+          {%- assign n = projects.size -%}
+        {%- else -%}
+          {%- assign n = 0 -%}
+          {%- for p in projects -%}{%- if p.filters contains f.slug -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+        {%- endif %}
+      <button type="button" class="filter-btn" data-filter="{{ f.slug }}" aria-pressed="{% if f.slug == 'all' %}true{% else %}false{% endif %}">{{ f.label | escape }} <span class="count">{{ n }}</span></button>
+      {%- endfor %}
+    </div>
+    <p class="sr-only" role="status" aria-live="polite" data-filter-status="research"></p>
+
+    <ul class="project-grid" data-filter-items="research" data-stagger>
+      {%- for project in projects %}
+      <li class="project-card card tilt glow" data-tags="{{ project.filters | join: ' ' }}">
+        <div class="fig-host">
+          {% include project-figure.html project=project %}
+        </div>
+        <div class="card-body">
+          <ul class="chip-list" aria-label="Areas">
+            {%- for slug in project.filters %}
+            {%- assign lf = site.data.research_filters | where: "slug", slug | first %}
+            <li class="chip chip--sm chip--brand">{{ lf.label | escape }}</li>
+            {%- endfor %}
+          </ul>
+          <h2 class="card-title"><a class="stretched" href="{{ project.url | relative_url }}" data-modal="tpl-{{ project.slug }}" aria-haspopup="dialog">{{ project.title }}</a></h2>
+          <p class="card-text">{{ project.excerpt | strip_html }}</p>
+          <p class="card-meta">{{ project.role_title }} · {{ project.institution }} · {{ project.period }}</p>
+          <span class="card-cta" aria-hidden="true">Question, summary &amp; methods {% include icon.html name="arrow-right" %}</span>
+        </div>
+        <template id="tpl-{{ project.slug }}">
+          <div class="modal-head">
+            <p class="eyebrow">{{ project.role_title }} · {{ project.period }}</p>
+            <h2 id="modal-title">{{ project.title }}</h2>
+            <p class="meta">{{ project.lab }}, {{ project.institution }}</p>
+          </div>
+          <div class="modal-body">
+            {% include project-body.html project=project body=project.content show_page_link=true %}
+          </div>
+        </template>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="muted small" style="margin-top:1.5rem">All figures on this page are illustrative schematics drawn in code, not real data.</p>
+  </div>
+</section>
+
+<dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+  <div class="modal-panel">
+    <button class="icon-btn modal-close" type="button" data-modal-close aria-label="Close">{% include icon.html name="close" %}</button>
+    <div data-modal-content></div>
+  </div>
+</dialog>

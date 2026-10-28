@@ -1,0 +1,74 @@
+---
+title: "Teaching & Mentoring"
+permalink: /teaching-mentoring/
+eyebrow: "05 · Teaching & Mentoring"
+lede: "Teaching assistantships at IIT Jodhpur, invited lectures for young neuroscientists, workshops, and hands-on mentoring through hackathons and Neuromatch."
+description: "Teaching and mentoring by Swatantra Dhara: teaching assistant for Introduction to Cognitive Science, Machine Learning with Big Data and Engineering Design at IIT Jodhpur; IYNA invited lectures; bioinformatics workshop."
+---
+{%- assign tas = site.teaching | where: "type", "Teaching assistant" | sort: "date" | reverse -%}
+{%- assign workshops = site.teaching | where: "type", "Workshop" | sort: "date" | reverse -%}
+{%- assign talks = site.talks | sort: "date" | reverse -%}
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">IIT Jodhpur</p>
+      <h2>Teaching assistantships</h2>
+    </div>
+    <ul class="teach-grid" data-stagger>
+      {%- for t in tas %}
+      <li class="teach-card card tilt glow">
+        <span class="explore-icon">{% include icon.html name="school" %}</span>
+        <p class="meta">{{ t.type }} · {{ t.term }}</p>
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.venue }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Invited lectures</p>
+      <h2>International Youth Neuroscience Association</h2>
+      <p>Invited lecturer for the IYNA Neuroscience I &amp; II Summer Programme.</p>
+    </div>
+    <ul class="lecture-list" data-stagger>
+      {%- for talk in talks %}
+      <li><span class="yr">{{ talk.year }}</span><span><span class="ttl">{{ talk.title }}</span><span class="venue">{{ talk.type }} · {{ talk.venue }}</span></span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Workshops &amp; mentoring</p>
+      <h2>Learning together</h2>
+    </div>
+    <ul class="teach-grid" data-stagger>
+      {%- for w in workshops %}
+      <li class="teach-card card tilt glow">
+        <span class="explore-icon">{% include icon.html name="mic" %}</span>
+        <p class="meta">{{ w.type }} · {{ w.term }}</p>
+        <h3>{{ w.title }}</h3>
+        <p>{{ w.venue }}</p>
+      </li>
+      {%- endfor %}
+      <li class="teach-card card tilt glow">
+        <span class="explore-icon">{% include icon.html name="users" %}</span>
+        <p class="meta">Hackathons · IIT Jodhpur</p>
+        <h3>SAIDE CBSA NeuroTech BCI hackathon</h3>
+        <p>Organised and led two editions, for over 20 and 35 participants, as founder and head of the IITJ CBSA NeuroTech Society.</p>
+      </li>
+      <li class="teach-card card tilt glow">
+        <span class="explore-icon">{% include icon.html name="network" %}</span>
+        <p class="meta">Volunteer · Neuromatch Academy</p>
+        <h3>Supporting learners at scale</h3>
+        <p>Academy issues mediator on Discord, academy feedback analysis, social events and outreach for Neuromatch Academy.</p>
+      </li>
+    </ul>
+  </div>
+</section>

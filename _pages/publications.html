@@ -1,0 +1,69 @@
+---
+title: "Publications & Talks"
+permalink: /publications-talks/
+eyebrow: "04 · Publications & Talks"
+lede: "Peer-reviewed work, conference posters, theses and invited lectures."
+description: "Publications and talks by Swatantra Dhara: IEEE EMBC 2023 paper on OCT skin-layer segmentation, ACCS12/BraiNDy 2026 poster on brain-state transitions, theses and invited lectures."
+---
+{%- assign talks = site.talks | sort: "date" | reverse -%}
+<section class="section">
+  <div class="container">
+    {%- for cat in site.publication_category %}
+    {%- assign key = cat[0] %}
+    {%- assign items = site.publications | where: "category", key | sort: "date" | reverse %}
+    {%- if items.size > 0 %}
+    <section class="pub-section" aria-labelledby="pubs-{{ key }}">
+      <h2 id="pubs-{{ key }}" data-reveal>{{ cat[1].title }} <span class="count">{{ items.size }}</span></h2>
+      <ol class="pub-list" data-stagger>
+        {%- for pub in items %}
+        <li class="pub-item card">
+          <div class="pub-year">{{ pub.year }}</div>
+          <div>
+            <h3 class="pub-title">{{ pub.title }}</h3>
+            <p class="pub-authors">{{ pub.authors | replace: site.author.name, "<strong>Swatantra Dhara</strong>" }}</p>
+            <p class="pub-venue">{{ pub.venue }}</p>
+            <div class="pub-actions">
+              {%- if pub.paperurl and pub.paperurl != "" %}
+              <a class="btn btn-sm btn-ghost" href="{{ pub.paperurl }}" rel="noopener">{{ pub.link_label | default: "View" }} {% include icon.html name="external" %}</a>
+              {%- else %}
+              <span class="link-placeholder">{{ pub.link_label | default: "Link" }} · coming soon</span>
+              {%- endif %}
+              {%- if pub.bibtex %}
+              <button class="btn btn-sm btn-ghost" type="button" data-copy="bib-{{ pub.slug }}">{% include icon.html name="copy" %}Copy BibTeX</button>
+              <span class="copy-status" role="status" aria-live="polite"></span>
+              {%- endif %}
+            </div>
+            {%- if pub.bibtex %}
+            <details class="bibtex">
+              <summary>Show BibTeX</summary>
+              <pre id="bib-{{ pub.slug }}"><code>{{ pub.bibtex | strip | escape }}</code></pre>
+            </details>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
+    {%- endfor %}
+
+    <section class="pub-section" aria-labelledby="talks-title">
+      <h2 id="talks-title" data-reveal>Invited lectures <span class="count">{{ talks.size }}</span></h2>
+      <p class="muted" data-reveal>Invited lecturer for the International Youth Neuroscience Association's Neuroscience I &amp; II Summer Programme.</p>
+      <ol class="pub-list" data-stagger>
+        {%- for talk in talks %}
+        <li class="pub-item card">
+          <div class="pub-year">{{ talk.year }}</div>
+          <div>
+            <h3 class="pub-title">{{ talk.title }}</h3>
+            <p class="pub-venue">{{ talk.type }} · {{ talk.venue }}</p>
+            {%- if talk.slides and talk.slides != "" %}
+            <div class="pub-actions"><a class="btn btn-sm btn-ghost" href="{{ talk.slides }}" rel="noopener">Slides {% include icon.html name="external" %}</a></div>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
+  </div>
+</section>
