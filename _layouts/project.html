@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<header class="page-hero">
+  <div class="container">
+    <p class="eyebrow"><a href="{{ '/research/' | relative_url }}">Research</a></p>
+    <h1 class="page-title" style="max-width:24ch">{{ page.title }}</h1>
+    <p class="lede">{{ page.role_title }} · {{ page.lab }}, {{ page.institution }} · {{ page.period }}</p>
+  </div>
+</header>
+<section class="section">
+  <div class="container">
+    <div class="card" style="overflow:hidden;max-width:52rem">
+      <div class="fig-host">{% include project-figure.html project=page %}</div>
+      <div class="modal-body">
+        {% include project-body.html project=page body=content hl=2 %}
+      </div>
+    </div>
+    <p style="margin-top:2rem"><a class="btn btn-ghost" href="{{ '/research/' | relative_url }}">{% include icon.html name="arrow-left" %}All research</a></p>
+  </div>
+</section>

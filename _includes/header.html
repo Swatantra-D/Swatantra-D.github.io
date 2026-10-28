@@ -1,0 +1,46 @@
+{%- comment -%} Site header: brand, desktop nav, theme toggle, mobile menu. Nav items come from _data/navigation.yml. {%- endcomment -%}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-avatar" src="{{ site.author.avatar | relative_url }}" alt="" width="36" height="36" decoding="async">
+      <span class="brand-name">{{ site.author.name }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        {%- for link in site.data.navigation.main -%}
+          {%- assign current = false -%}
+          {%- if link.url == "/" -%}
+            {%- if page.url == "/" -%}{%- assign current = true -%}{%- endif -%}
+          {%- elsif page.url contains link.url -%}
+            {%- assign current = true -%}
+          {%- endif %}
+        <li><a class="nav-link" href="{{ link.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ link.title }}{% if current %}<span class="nav-indicator" aria-hidden="true"></span>{% endif %}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">
+        {% include icon.html name="moon" %}{% include icon.html name="sun" %}
+      </button>
+      <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+</header>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Main menu">
+    <ol>
+      {%- for link in site.data.navigation.main -%}
+        {%- assign current = false -%}
+        {%- if link.url == "/" -%}
+          {%- if page.url == "/" -%}{%- assign current = true -%}{%- endif -%}
+        {%- elsif page.url contains link.url -%}
+          {%- assign current = true -%}
+        {%- endif %}
+      <li><a href="{{ link.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+      {%- endfor %}
+    </ol>
+  </nav>
+</div>

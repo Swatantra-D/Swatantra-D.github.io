@@ -1,0 +1,52 @@
+{%- comment -%}
+  Project details shared by the research modal and the project page.
+  Params: project (the _portfolio document), body (its rendered content),
+          hl (heading level for the section titles; 3 in the modal, 2 on the page).
+{%- endcomment -%}
+{%- assign p = include.project -%}
+{%- assign hl = include.hl | default: 3 -%}
+<section>
+  <h{{ hl }}>The question</h{{ hl }}>
+  <p class="question">{{ p.question }}</p>
+</section>
+<section class="summary">
+  <h{{ hl }}>In plain language</h{{ hl }}>
+  {{ include.body }}
+</section>
+<section>
+  <h{{ hl }}>Methods &amp; tools</h{{ hl }}>
+  <ul class="chip-list">
+    {%- for m in p.methods %}
+    <li class="chip">{{ m }}</li>
+    {%- endfor %}
+  </ul>
+</section>
+<div class="modal-facts">
+  <section>
+    <h{{ hl }}>My role</h{{ hl }}>
+    <p>{{ p.role }}</p>
+  </section>
+  <section>
+    <h{{ hl }}>Lab &amp; institution</h{{ hl }}>
+    <p>
+      {%- if p.lab_url and p.lab_url != "" -%}<a href="{{ p.lab_url }}" rel="noopener">{{ p.lab }}</a>{%- else -%}{{ p.lab }}{%- endif -%}, {{ p.institution }}
+      {%- if p.supervisor and p.supervisor != "" %}<br><span class="muted">Supervisor: {{ p.supervisor }}</span>{%- endif %}
+      <br><span class="muted">{{ p.period }}</span>
+    </p>
+  </section>
+</div>
+<section>
+  <h{{ hl }}>Links</h{{ hl }}>
+  <div class="link-row">
+    {%- for l in p.links -%}
+      {%- if l.url and l.url != "" %}
+    <a class="btn btn-sm btn-ghost" href="{{ l.url }}" rel="noopener">{{ l.label }} {% include icon.html name="external" %}</a>
+      {%- else %}
+    <span class="link-placeholder">{{ l.label }} · link coming soon</span>
+      {%- endif -%}
+    {%- endfor %}
+    {%- if include.show_page_link %}
+    <a class="btn btn-sm btn-ghost" href="{{ p.url | relative_url }}">Open as a page {% include icon.html name="arrow-right" %}</a>
+    {%- endif %}
+  </div>
+</section>

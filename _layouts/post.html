@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | plus: 1 -%}
+<article class="post">
+  <header class="post-hero">
+    <div class="container">
+      <p class="eyebrow"><a href="{{ '/blog/' | relative_url }}">Blog</a></p>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">
+        <span>{% include icon.html name="calendar" %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time></span>
+        <span>{% include icon.html name="clock" %}{{ minutes }} min read</span>
+        {%- if page.draft_badge %}
+        <span class="badge badge--draft">Draft – verify</span>
+        {%- endif %}
+      </p>
+      {%- if page.tags.size > 0 %}
+      <ul class="chip-list" style="margin-top:1rem" aria-label="Tags">
+        {%- for tag in page.tags %}
+        <li><a class="chip chip--sm" href="{{ '/blog/' | relative_url }}?tag={{ tag | uri_escape }}">{{ tag }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </header>
+  <div class="container post-layout">
+    <nav class="toc" data-toc aria-label="On this page" hidden>
+      <p class="toc-title">On this page</p>
+      <ol></ol>
+    </nav>
+    <div class="prose post-body" data-post-body>
+      {{ content }}
+    </div>
+  </div>
+  <nav class="container post-nav" aria-label="More posts">
+    {%- if page.previous %}
+    <a class="card tilt glow" href="{{ page.previous.url | relative_url }}"><span class="dir">← Previous</span><span class="ttl">{{ page.previous.title }}</span></a>
+    {%- else %}<span></span>{%- endif %}
+    {%- if page.next %}
+    <a class="card tilt glow next" href="{{ page.next.url | relative_url }}"><span class="dir">Next →</span><span class="ttl">{{ page.next.title }}</span></a>
+    {%- endif %}
+  </nav>
+</article>

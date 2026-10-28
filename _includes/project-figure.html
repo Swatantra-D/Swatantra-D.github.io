@@ -1,0 +1,12 @@
+{%- comment -%}
+  Figure for a research project: the real image if `image` is set in the
+  project's front matter, otherwise the code-drawn schematic named by `figure`.
+{%- endcomment -%}
+{%- assign p = include.project -%}
+{%- if p.image and p.image != "" -%}
+<img src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.title | escape }}" loading="lazy" decoding="async" width="800" height="500">
+{%- else -%}
+{%- capture fig_path -%}figures/{{ p.figure }}.svg{%- endcapture -%}
+{% include {{ fig_path }} %}
+<span class="fig-note">Illustrative schematic</span>
+{%- endif -%}

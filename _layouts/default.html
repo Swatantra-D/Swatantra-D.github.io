@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+{% include head.html %}
+</head>
+<body class="{% if page.url == '/' %}page-home {% endif %}layout-{{ page.layout | default: 'default' }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main" tabindex="-1">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>

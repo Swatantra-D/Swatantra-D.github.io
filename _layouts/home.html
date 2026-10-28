@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<section class="hero" aria-labelledby="hero-name">
+  <div class="hero-cover">
+    <div class="hero-media" data-parallax>
+      <img src="{{ '/assets/img/cover-1200.webp' | relative_url }}"
+           srcset="{{ '/assets/img/cover-1200.webp' | relative_url }} 1200w, {{ '/assets/img/cover-2400.webp' | relative_url }} 2400w"
+           sizes="100vw" width="2400" height="1067" alt="" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <canvas class="hero-net" aria-hidden="true"></canvas>
+    <div class="container hero-copy">
+      <p class="hero-eyebrow">{{ page.hero_eyebrow }}</p>
+      <h1 class="hero-name" id="hero-name">{{ site.author.name }}</h1>
+      <p class="hero-identity">
+        <span class="sr-only">{{ page.identity | join: "; " }}</span>
+        <span aria-hidden="true"><span class="typed" data-typed="{{ page.identity | jsonify | escape }}">{{ page.identity | first }}</span><span class="caret"></span></span>
+      </p>
+    </div>
+  </div>
+  <div class="container hero-base">
+    <div class="hero-avatar">
+      <span class="avatar-ring" aria-hidden="true"></span>
+      <img src="{{ '/assets/img/profile-400.webp' | relative_url }}"
+           srcset="{{ '/assets/img/profile-400.webp' | relative_url }} 400w, {{ '/assets/img/profile-800.webp' | relative_url }} 800w"
+           sizes="172px" width="400" height="400" alt="Portrait of {{ site.author.name }}" decoding="async">
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-magnetic" href="{{ '/cv-skills/#cv' | relative_url }}">{% include icon.html name="file" %}View my CV</a>
+      <a class="btn btn-ghost btn-magnetic" href="{{ '/research/' | relative_url }}">Research</a>
+      <a class="btn btn-ghost btn-magnetic" href="{{ '/contact/' | relative_url }}">Contact</a>
+      <span class="hero-social">
+        <a class="icon-btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" rel="me noopener" aria-label="LinkedIn profile">{% include icon.html name="linkedin" %}</a>
+        <a class="icon-btn" href="https://github.com/{{ site.author.github }}" rel="me noopener" aria-label="GitHub profile">{% include icon.html name="github" %}</a>
+      </span>
+    </div>
+  </div>
+</section>
+{{ content }}
