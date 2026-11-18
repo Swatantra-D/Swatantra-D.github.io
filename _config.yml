@@ -33,7 +33,7 @@ author:
   department       : "Center for Brain Science and Applications, School of Artificial Intelligence and Data Science"
   location         : "Jodhpur, India"
   # PLACEHOLDER: replace with a permanent public e-mail address.
-  email            : "YOUR_EMAIL_HERE"
+  email            : "dharaswat@gmail.com"
   github           : "Swatantra-D"
   linkedin         : "swatantra-dhara"
   googlescholar    : # URL, if you create a profile
@@ -41,7 +41,7 @@ author:
 
 # Contact form: create a form at https://formspree.io and paste its ID here
 # (the part after /f/ in the form endpoint).
-formspree_id             : "YOUR_FORM_ID"
+# formspree_id             : "YOUR_FORM_ID"
 
 # Publication categories, in display order (used by the Publications & Talks page).
 publication_category:
